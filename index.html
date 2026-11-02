@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZERTIVA Preise – Klickdummy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F5F7F5;color:#14211B;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5}
+a{color:#1F6F4A}a:hover{color:#155238}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #1F6F4A;outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header{background:#fff;border-bottom:1px solid #D6E0DA}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+.logo{font-family:Manrope,sans-serif;font-weight:800;font-size:22px;letter-spacing:.08em;color:#14211B;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:24px;font-size:15px}
+nav a{color:#4A5A52;text-decoration:none}nav a.on{color:#14211B;font-weight:600}
+.btn-out{padding:10px 18px;border-radius:8px;border:1px solid #1F6F4A;color:#1F6F4A;font-weight:600;text-decoration:none;font-size:15px;background:#fff}
+main{padding-top:56px;padding-bottom:72px;display:flex;flex-direction:column;gap:40px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#1F6F4A}
+h1{margin:0;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(32px,5vw,48px);line-height:1.1;max-width:760px}
+.lead{margin:0;max-width:640px;color:#4A5A52;font-size:18px}
+.tabs{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:4px;background:#fff;border:1px solid #D6E0DA;border-radius:12px}
+.tab{min-height:44px;padding:10px 20px;border:0;border-radius:9px;font-size:15px;font-weight:600;background:transparent;color:#33443B}
+.tab.on{background:#1F6F4A;color:#fff}
+.status{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;background:#E8F2EC;border:1px solid #A9CDB7;border-radius:12px}
+.ghost{min-height:44px;padding:8px 16px;border:1px solid #1F6F4A;background:transparent;color:#1F6F4A;border-radius:8px;font-weight:600}
+.finder{background:#fff;border:1px solid #D6E0DA;border-radius:16px;padding:clamp(24px,4vw,48px);max-width:820px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.meta{display:flex;justify-content:space-between;font-size:14px;color:#4A5A52}
+.bar{height:6px;background:#E8F2EC;border-radius:3px;overflow:hidden;margin-top:8px}.bar>div{height:6px;background:#1F6F4A;border-radius:3px}
+h2{margin:0;font-family:Manrope,sans-serif;font-weight:700}
+.q h2{font-size:26px;line-height:1.25}.q p{margin:6px 0 0;color:#4A5A52}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.opt{min-height:72px;text-align:left;padding:16px 18px;border-radius:12px;display:flex;flex-direction:column;gap:2px;background:#fff;border:2px solid #D6E0DA;color:#14211B}
+.opt.on{background:#E8F2EC;border-color:#1F6F4A}
+.opt b{font-weight:600}.opt span{font-size:14px;color:#4A5A52}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.link{min-height:44px;padding:8px 16px;border:0;background:transparent;color:#1F6F4A;font-weight:600}
+.link:disabled{color:#9AA8A0;cursor:default}.link.u{text-decoration:underline}
+.pill{padding:4px 10px;border-radius:999px;background:#E8F2EC;color:#155238;font-size:13px;font-weight:600}
+.big{font-family:Manrope,sans-serif;font-size:44px;font-weight:800;line-height:1}
+.muted{color:#4A5A52}
+ul.chk{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+ul.chk li{display:flex;gap:10px;align-items:flex-start}
+ul.chk svg{flex-shrink:0;margin-top:3px}
+.alt{padding:16px 18px;border-radius:12px;background:#F5F7F5;border:1px solid #D6E0DA;color:#33443B;font-size:15px}
+.primary{min-height:48px;padding:12px 24px;border:0;border-radius:10px;background:#1F6F4A;color:#fff;font-size:16px;font-weight:600}
+.secondary{min-height:48px;padding:12px 20px;border:1px solid #1F6F4A;border-radius:10px;background:#fff;color:#1F6F4A;font-size:16px;font-weight:600}
+.grid{display:grid;gap:20px;align-items:stretch}
+.card{display:flex;flex-direction:column;gap:18px;padding:26px;border-radius:16px;background:#fff;border:2px solid #D6E0DA}
+.card.rec{border-color:#1F6F4A}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:28px}
+.card h2{font-size:24px;font-weight:800}
+.badge{padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;background:#E8F2EC;color:#155238}
+.badge.rec{background:#1F6F4A;color:#fff}
+.price{font-family:Manrope,sans-serif;font-size:38px;font-weight:800;line-height:1.1}
+.card ul{flex-grow:1;font-size:15px}
+.card .cta{min-height:48px;padding:12px 20px;border-radius:10px;font-size:16px;font-weight:600;background:#fff;color:#1F6F4A;border:1px solid #1F6F4A}
+.card .cta.fill{background:#1F6F4A;color:#fff}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:28px;border-radius:16px;background:#fff;border:1px solid #D6E0DA}
+.info h3{margin:0 0 6px;font-size:16px}.info p{margin:0;color:#4A5A52;font-size:15px}
+.trial{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:28px 32px;border-radius:16px;background:#14211B;color:#fff}
+.trial h2{font-size:22px}.trial p{margin:4px 0 0;color:#C9D6CE}
+.trial a{min-height:48px;display:inline-flex;align-items:center;padding:12px 24px;border-radius:10px;background:#fff;color:#14211B;font-weight:700;text-decoration:none}
+.note{text-align:center;color:#4A5A52;margin:0}
+</style>
+</head>
+<body>
+<header><div class="wrap hdr">
+  <a class="logo" href="#top">ZERTIVA</a>
+  <nav aria-label="Hauptnavigation"><a href="#top">Features</a><a href="#top">Phasen</a><a href="#top">Zertifizierung</a><a href="#top">Vorteile</a><a class="on" href="#top">Preise</a></nav>
+  <a class="btn-out" href="#top">Anmelden</a>
+</div></header>
+<main id="top" class="wrap">
+  <section class="hero">
+    <span class="eyebrow">Preise</span>
+    <h1>Im Abo oder einmalig pro Projekt</h1>
+    <p class="lead">Sie betreuen laufend Zertifizierungen? Dann ist das Abo richtig. Sie haben ein einzelnes Bauvorhaben? Dann zahlen Sie einmal – nach Anzahl der Produkte im Projekt, egal wie lange es dauert.</p>
+    <div class="tabs" role="tablist" aria-label="Preisansicht" id="tabs"></div>
+  </section>
+  <div id="app" aria-live="polite"></div>
+  <section class="trial">
+    <div><h2>14 Tage kostenlos testen</h2><p>Alle Versionen · keine Zahlungsdaten nötig · endet automatisch</p></div>
+    <a href="#top">Kostenlos starten</a>
+  </section>
+</main>
+<script>
+var QUESTIONS = [
+  { id: 'role', title: 'Wie würden Sie Ihre Rolle beschreiben?', hint: '', opts: [
+    { v: 'berater', l: 'Energieberater', d: 'oder kleinerer Betrieb' },
+    { v: 'planer', l: 'Planer oder Auditor', d: 'Architektur, TGA, Nachhaltigkeitsberatung' },
+    { v: 'bau', l: 'Bauunternehmen', d: 'GU, Bauträger, ausführende Firma' },
+    { v: 'konzern', l: 'Unternehmensgruppe', d: 'mehrere Standorte, viele Lizenzen' }
+  ]},
+  { id: 'projects', title: 'Wie viele Zertifizierungsprojekte betreuen Sie gleichzeitig?', hint: 'Gemeint sind Projekte, die parallel in Bearbeitung sind.', opts: [
+    { v: '1', l: 'Ein einzelnes Projekt', d: 'einmaliger Bedarf' },
+    { v: '3', l: '2–3 Projekte', d: 'regelmäßig, aber überschaubar' },
+    { v: '10', l: '4–10 Projekte', d: 'laufendes Tagesgeschäft' },
+    { v: 'more', l: 'Mehr als 10', d: 'großes Portfolio' }
+  ]},
+  { id: 'size', title: 'Wie viele Produkte umfasst die Produktliste des Projekts?', hint: 'Gezählt werden die Produkte, die für die Zertifizierung nachgewiesen werden müssen.', when: function (a) { return a.projects === '1'; }, opts: [
+    { v: 'B', l: 'Bis 70 Produkte', d: 'z. B. Einfamilienhaus, Sanierung' },
+    { v: 'P', l: '71–150 Produkte', d: 'z. B. Mehrfamilienhaus, Kita' },
+    { v: 'P+', l: '151–250 Produkte', d: 'z. B. größeres MFH, Gewerbe' },
+    { v: 'E', l: '251–500 Produkte', d: 'z. B. Bürogebäude, Schule' },
+    { v: 'X', l: 'Mehr als 500', d: 'Großprojekte, Quartiere' },
+    { v: '?', l: 'Weiß ich noch nicht', d: 'wir schätzen für Sie' }
+  ]},
+  { id: 'lv', title: 'Möchten Sie Leistungsverzeichnisse automatisch einlesen?', hint: 'Der KI-Import liest GAEB-X83-Dateien ein und ordnet Produkte zu.', when: function (a) { return a.projects === '3' || a.projects === '1'; }, opts: [
+    { v: 'ja', l: 'Ja, unbedingt', d: 'spart viel manuelle Arbeit' },
+    { v: 'nein', l: 'Nein', d: 'ich pflege Produkte selbst' },
+    { v: '?', l: 'Weiß ich nicht', d: '' }
+  ]},
+  { id: 'users', title: 'Wie viele Personen arbeiten in ZERTIVA mit?', hint: 'Handwerker und externe Gewerke sind immer kostenlos und zählen nicht mit.', opts: [
+    { v: '1', l: 'Nur ich', d: '1 Person' },
+    { v: '3', l: '2–3 Personen', d: 'kleines Team' },
+    { v: '10', l: '4–10 Personen', d: 'größeres Team' },
+    { v: 'more', l: 'Mehr als 10', d: 'mehrere Teams' }
+  ]}
+];
+
+var PROJ = {
+  B: { name: 'Projekt Basic', price: 990, products: 70, credits: 10, users: 1, usersLabel: '1 Nutzer', lv: false, support: 'E-Mail-Support', size: 'Bis 70 Produkte', example: 'z. B. Einfamilienhaus, Sanierung' },
+  P: { name: 'Projekt Pro', price: 1990, products: 150, credits: 20, users: 3, usersLabel: 'Bis 3 Nutzer', lv: true, support: 'E-Mail- und Telefon-Support', size: 'Bis 150 Produkte', example: 'z. B. Mehrfamilienhaus, Kita' },
+  E: { name: 'Projekt Enterprise', price: 3990, products: 500, credits: 40, users: 99, usersLabel: 'Beliebig viele Nutzer', lv: true, support: 'Persönlicher Ansprechpartner', size: '251–500 Produkte', example: 'z. B. Bürogebäude, Schule' }
+};
+var EXT_PRICE = 590;
+
+function eur(n) { return n.toLocaleString('de-DE') + ' €'; }
+
+
+var CHECK = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F6F4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function list(items) { return '<ul class="chk">' + items.map(function (t) { return '<li>' + CHECK + '<span>' + esc(t) + '</span></li>'; }).join('') + '</ul>'; }
+
+var App = {
+  state: { view: 'finder', step: 0, ans: {}, done: false, checkout: '' },
+  handlers: [],
+  setState: function (p) { Object.assign(this.state, p); this.render(); },
+  h: function (fn) { this.handlers.push(fn); return this.handlers.length - 1; },
+  visible: function (ans) { return QUESTIONS.filter(function (q) { return !q.when || q.when(ans); }); },
+  answer: function (id, v) {
+    var ans = Object.assign({}, this.state.ans); ans[id] = v;
+    var vis = this.visible(ans);
+    var idx = vis.findIndex(function (q) { return q.id === id; });
+    if (idx + 1 >= vis.length) this.setState({ ans: ans, done: true });
+    else this.setState({ ans: ans, step: idx + 1 });
+  },
+  buy: function (label) { this.setState({ checkout: label }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+
+  recommend: function (a) {
+    var self = this;
+    var users = a.users;
+    var showAbo = function () { self.setState({ view: 'abo' }); };
+    var showProj = function () { self.setState({ view: 'projekt' }); };
+
+    if (a.role === 'konzern' || a.projects === 'more' || users === 'more' || (a.projects === '1' && a.size === 'X')) {
+      var why = [];
+      if (a.role === 'konzern') why.push('Mehrere Standorte und Teams lassen sich zentral in einer Lizenz bündeln.');
+      if (a.projects === 'more') why.push('Unbegrenzt viele aktive Projekte statt maximal 10 im Pro-Plan.');
+      if (users === 'more') why.push('Beliebig viele Nutzer – Pro ist auf 10 Nutzer begrenzt.');
+      if (a.projects === '1' && a.size === 'X') why.push('Großprojekte mit mehr als 500 Produkten kalkulieren wir individuell, inklusive passendem Credit-Kontingent.');
+      why.push('Persönlicher Ansprechpartner und individuelle Laufzeit.');
+      return { id: a.projects === '1' ? 'proj-X' : 'abo-enterprise', title: 'Enterprise', model: 'Individuelles Angebot', price: 'Auf Anfrage', unit: 'individuelle Laufzeit',
+        reasons: why, alt: a.projects === '1' ? 'Bei bis zu 500 Produkten reicht Projekt Enterprise für 3.990 € einmalig.' : 'Bis 10 Projekte und 10 Nutzer deckt der Pro-Plan ab (350 € / Monat zzgl. Nutzer).',
+        cta: 'Jetzt kontaktieren', buy: function () { self.buy('Enterprise (Kontaktanfrage)'); }, show: showAbo, showLabel: 'Alle Abo-Pläne ansehen' };
+    }
+
+    if (a.projects === '1') {
+      var unknown = a.size === '?' || !a.size;
+      var key = unknown ? 'P' : (a.size === 'P+' ? 'P' : a.size);
+      var need = users === '1' ? 1 : users === '3' ? 3 : 10;
+      var r = [];
+      if (unknown) r.push('Ohne Angabe empfehlen wir Pro (bis 150 Produkte). Wächst die Produktliste, erweitern Sie einfach.');
+      if (key === 'B' && (a.lv === 'ja' || need > 1)) {
+        key = 'P';
+        r.push(a.lv === 'ja' ? 'Für den KI-Import von Leistungsverzeichnissen brauchen Sie mindestens Projekt Pro.' : 'Projekt Basic ist auf 1 Nutzer begrenzt – Pro enthält bis zu 3.');
+      }
+      if (key === 'P' && need > 3) {
+        key = 'E';
+        r.push('Für 4–10 Personen ist Projekt Enterprise mit beliebig vielen Nutzern die passende Stufe.');
+      }
+      var p = PROJ[key];
+      var ext = (a.size === 'P+' && key === 'P') ? 2 : 0;
+      var price = p.price + ext * EXT_PRICE;
+      r.push('Einmalig zahlen – egal, wie lange das Projekt dauert (bis zum Zertifikat, max. 36 Monate).');
+      if (ext > 0) r.push('Pro deckt 150 Produkte ab, mit 2 Erweiterungen à 590 € kommen Sie auf 250 Produkte – günstiger als Enterprise.');
+      else r.push('Bis zu ' + p.products + ' Produkte in der Produktliste, ' + p.credits + ' Credits und ' + p.usersLabel.replace('Bis', 'bis').replace('Beliebig', 'beliebig') + ' inklusive.');
+      r.push(p.lv ? 'KI-Import von Leistungsverzeichnissen und ' + p.support + '.' : 'SHI-Produktdatenbank komplett, Handwerker-Support und ' + p.support + '.');
+      if (a.role === 'planer') r.push('Als Auditor laden Sie Bauherr oder GU kostenlos ins Projekt ein.');
+      var aboRef = p.lv ? 350 : 200;
+      var aboName = p.lv ? 'Pro-Abo' : 'Basic-Abo';
+      return { id: 'proj-' + key, title: p.name, model: 'Einmalig pro Projekt', price: eur(price), unit: ext > 0 ? 'einmalig · inkl. 2 Erweiterungen (250 Produkte)' : 'einmalig · bis Projektabschluss',
+        reasons: r, alt: 'Das ' + aboName + ' würde bei einer typischen Projektdauer von 18 Monaten ' + eur(18 * aboRef) + ' kosten. Es lohnt sich, wenn Sie laufend mehrere Projekte betreuen.',
+        cta: 'Projekt jetzt starten', buy: function () { self.buy(p.name); }, show: showProj, showLabel: 'Alle Projektlizenzen ansehen' };
+    }
+
+    if (a.projects === '3' && a.lv === 'nein' && users === '1') {
+      return { id: 'abo-basic', title: 'Basic', model: 'Abo · monatlich kündbar', price: '200 €', unit: 'pro Monat',
+        reasons: ['Bis zu 3 aktive Projekte – passt genau zu Ihrem Umfang.', 'Ein Nutzer reicht für Sie aus.', 'Sie brauchen keinen KI-Import und zahlen deshalb nicht für Pro.', '2 Credits pro Monat, weitere nachkaufbar.'],
+        alt: 'Sobald Sie Leistungsverzeichnisse importieren oder im Team arbeiten möchten, ist Pro für 350 € / Monat die bessere Wahl.',
+        cta: '14 Tage kostenlos testen', buy: function () { self.buy('Basic'); }, show: showAbo, showLabel: 'Alle Abo-Pläne ansehen' };
+    }
+
+    var extra = users === '1' ? 0 : users === '3' ? 2 : 9;
+    var reasons = [];
+    if (a.projects === '3') reasons.push('Bis zu 10 aktive Projekte – Luft nach oben für Ihre 2–3 Projekte.');
+    else reasons.push('Bis zu 10 aktive Projekte – passend für Ihr laufendes Geschäft.');
+    if (a.projects === '3' && users === '1' && a.lv !== 'nein') reasons.push('KI-Import von Leistungsverzeichnissen ist nur ab Pro enthalten.');
+    else reasons.push('KI-Import von Leistungsverzeichnissen inklusive.');
+    if (extra > 0) reasons.push('Teamfähig: 1 Nutzer inklusive, weitere je 50 € / Monat (bis zu 10).');
+    reasons.push('5 Credits pro Monat sowie E-Mail- und Telefon-Support.');
+    var price = 350 + 50 * extra;
+    return { id: 'abo-pro', title: 'Pro', model: 'Abo · monatlich kündbar', price: eur(price), unit: extra > 0 ? 'pro Monat bei bis zu ' + (extra + 1) + ' Nutzern' : 'pro Monat',
+      reasons: reasons,
+      alt: a.projects === '3' ? 'Haben Sie nur gelegentlich ein Projekt, kann eine Projektlizenz ab 990 € einmalig günstiger sein.' : 'Ab mehr als 10 Projekten oder Nutzern lohnt sich ein Enterprise-Angebot.',
+      cta: '14 Tage kostenlos testen', buy: function () { self.buy('Pro'); }, show: showAbo, showLabel: 'Alle Abo-Pläne ansehen' };
+  },
+
+  card: function (id, popular, recId) {
+    var isRec = id === recId;
+    return { cls: isRec ? ' rec' : '', badge: isRec ? 'Empfohlen für Sie' : (popular ? 'Am beliebtesten' : ''), badgeCls: isRec ? ' rec' : '', fill: isRec || popular };
+  },
+
+  planCard: function (p) {
+    var self = this;
+    return '<article class="card' + p.cls + '">' +
+      '<div class="top"><h2>' + esc(p.name) + '</h2>' + (p.badge ? '<span class="badge' + p.badgeCls + '">' + esc(p.badge) + '</span>' : '') + '</div>' +
+      (p.who ? '<p class="muted" style="margin:0;font-size:15px;min-height:45px">' + esc(p.who) + '</p>' : '') +
+      (p.size ? '<div><div style="font-weight:600">' + esc(p.size) + '</div><div class="muted" style="font-size:14px">' + esc(p.example) + '</div></div>' : '') +
+      '<div><div class="price">' + esc(p.price) + '</div><div class="muted" style="font-size:14px">' + esc(p.unit) + '</div></div>' +
+      list(p.features) +
+      '<button type="button" class="cta' + (p.fill ? ' fill' : '') + '" data-h="' + self.h(p.buy) + '">' + esc(p.cta) + '</button>' +
+      '</article>';
+  },
+
+  render: function () {
+    var self = this, s = this.state;
+    this.handlers = [];
+    var rec = s.done ? this.recommend(s.ans) : null;
+    var recId = rec ? rec.id : '';
+
+    document.getElementById('tabs').innerHTML = [
+      { id: 'finder', label: 'Passendes Angebot finden' }, { id: 'abo', label: 'Abo' }, { id: 'projekt', label: 'Einmalig pro Projekt' }
+    ].map(function (t) {
+      var on = t.id === s.view;
+      return '<button type="button" role="tab" aria-selected="' + on + '" class="tab' + (on ? ' on' : '') + '" data-h="' + self.h(function () { self.setState({ view: t.id }); }) + '">' + t.label + '</button>';
+    }).join('');
+
+    var out = '';
+    if (s.checkout) out += '<div class="status" role="status" style="margin-bottom:24px"><span>Klickdummy: Hier startet der Checkout für <strong>' + esc(s.checkout) + '</strong>.</span><button type="button" class="ghost" data-h="' + this.h(function () { self.setState({ checkout: '' }); }) + '">Schließen</button></div>';
+
+    if (s.view === 'finder') {
+      out += '<section class="finder" aria-label="Angebotsfinder">';
+      if (!s.done) {
+        var vis = this.visible(s.ans), step = Math.min(s.step, vis.length - 1), q = vis[step];
+        out += '<div><div class="meta"><span>Frage ' + (step + 1) + ' von ' + vis.length + '</span><span>ca. 30 Sekunden</span></div>' +
+          '<div class="bar"><div style="width:' + Math.round(step / vis.length * 100) + '%"></div></div></div>' +
+          '<div class="q"><h2>' + esc(q.title) + '</h2>' + (q.hint ? '<p>' + esc(q.hint) + '</p>' : '') + '</div>' +
+          '<div class="opts">' + q.opts.map(function (o) {
+            var on = s.ans[q.id] === o.v;
+            return '<button type="button" class="opt' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-h="' + self.h(function () { self.answer(q.id, o.v); }) + '"><b>' + esc(o.l) + '</b><span>' + esc(o.d) + '</span></button>';
+          }).join('') + '</div>' +
+          '<div class="row"><button type="button" class="link"' + (step === 0 ? ' disabled' : '') + ' data-h="' + this.h(function () { self.setState({ step: Math.max(0, step - 1) }); }) + '">← Zurück</button>' +
+          '<button type="button" class="link u" data-h="' + this.h(function () { self.setState({ view: 'abo' }); }) + '">Direkt alle Preise ansehen</button></div>';
+      } else {
+        out += '<div><span class="eyebrow">Unsere Empfehlung für Sie</span>' +
+          '<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin:8px 0"><h2 style="font-size:34px;font-weight:800">' + esc(rec.title) + '</h2><span class="pill">' + esc(rec.model) + '</span></div>' +
+          '<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px"><span class="big">' + esc(rec.price) + '</span><span class="muted">' + esc(rec.unit) + '</span></div></div>' +
+          '<div><h3 style="margin:0 0 10px;font-size:16px">Warum dieses Angebot</h3>' + list(rec.reasons) + '</div>' +
+          '<div class="alt"><strong>Alternative:</strong> ' + esc(rec.alt) + '</div>' +
+          '<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">' +
+          '<button type="button" class="primary" data-h="' + this.h(rec.buy) + '">' + esc(rec.cta) + '</button>' +
+          '<button type="button" class="secondary" data-h="' + this.h(rec.show) + '">' + esc(rec.showLabel) + '</button>' +
+          '<button type="button" class="link u" style="color:#4A5A52" data-h="' + this.h(function () { self.setState({ step: 0, ans: {}, done: false }); }) + '">Fragen neu beantworten</button></div>';
+      }
+      out += '</section>';
+    }
+
+    if (s.view === 'abo') {
+      var abo = [
+        Object.assign({ name: 'Basic', who: 'Für Energieberater und kleinere Betriebe', price: '200 €', unit: 'pro Monat', cta: 'Kostenlos testen',
+          features: ['3 aktive Projekte', '1 Nutzer', '2 Credits pro Monat', 'SHI-Produktdatenbank komplett', 'Handwerker-Support', 'E-Mail-Support'],
+          buy: function () { self.buy('Basic'); } }, this.card('abo-basic', false, recId)),
+        Object.assign({ name: 'Pro', who: 'Für Planer, Auditoren und Bauunternehmen', price: '350 €', unit: 'pro Monat', cta: 'Kostenlos testen',
+          features: ['10 aktive Projekte', '1 Nutzer inkl., weitere je 50 € / Monat (max. 10)', '5 Credits pro Monat', 'SHI-Produktdatenbank komplett', 'KI-Import von Leistungsverzeichnissen', 'E-Mail- und Telefon-Support'],
+          buy: function () { self.buy('Pro'); } }, this.card('abo-pro', true, recId)),
+        Object.assign({ name: 'Enterprise', who: 'Für Unternehmen mit größerem Lizenzbedarf', price: 'Individuell', unit: 'individuelle Laufzeit', cta: 'Jetzt kontaktieren',
+          features: ['Unbegrenzt aktive Projekte', 'Beliebig viele Nutzer', 'Credits nach Bedarf', 'KI-Import von Leistungsverzeichnissen', 'Persönlicher Ansprechpartner', 'Individuelle Laufzeit'],
+          buy: function () { self.buy('Enterprise (Kontaktanfrage)'); } }, this.card('abo-enterprise', false, recId))
+      ];
+      out += '<section aria-label="Abo-Pläne" style="display:flex;flex-direction:column;gap:20px"><p class="note">Monatlich kündbar · bei jährlicher Zahlung bis zu 16 % sparen</p>' +
+        '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">' + abo.map(function (p) { return self.planCard(p); }).join('') + '</div></section>';
+    }
+
+    if (s.view === 'projekt') {
+      var proj = ['B', 'P', 'E'].map(function (k) {
+        var p = PROJ[k];
+        var f = [p.credits + ' Credits inklusive', p.usersLabel, 'SHI-Produktdatenbank komplett', p.lv ? 'KI-Import von Leistungsverzeichnissen' : 'Ohne KI-Import', p.support];
+        return Object.assign({ name: p.name.replace('Projekt ', ''), size: p.size, example: p.example, price: eur(p.price), unit: 'einmalig pro Projekt', cta: 'Projekt starten',
+          features: f, buy: function () { self.buy(p.name); } }, self.card('proj-' + k, k === 'P', recId));
+      });
+      proj.push(Object.assign({ name: 'Individuell', size: 'Mehr als 500 Produkte', example: 'Großprojekte, Quartiere', price: 'Auf Anfrage', unit: 'einmalig pro Projekt', cta: 'Angebot anfragen',
+        features: ['Credits nach Bedarf', 'Beliebig viele Nutzer', 'Persönlicher Ansprechpartner'], buy: function () { self.buy('Projekt individuell (Anfrage)'); } }, this.card('proj-X', false, recId)));
+      out += '<section aria-label="Projektlizenzen" style="display:flex;flex-direction:column;gap:20px"><p class="note">Einmal zahlen · gültig bis Projektabschluss · Preis nach Anzahl der Produkte in der Produktliste</p>' +
+        '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' + proj.map(function (p) { return self.planCard(p); }).join('') + '</div>' +
+        '<div class="info"><div><h3>Mehr Produkte als geplant?</h3><p>Jede Projektlizenz lässt sich erweitern: +50 Produkte für 590 €. Oder Sie wechseln mit Anrechnung des bereits gezahlten Preises in die nächste Stufe.</p></div>' +
+        '<div><h3>Laufzeit ohne Aufpreis</h3><p>Gültig bis zur Ausstellung des Zertifikats, maximal 36 Monate. Danach 12 Monate Lesezugang für Nachweise.</p></div>' +
+        '<div><h3>Später ins Abo wechseln</h3><p>Abo innerhalb von 3 Monaten abschließen und 50 % des Projektpreises angerechnet bekommen. Credits und Nutzer jederzeit nachkaufbar.</p></div></div></section>';
+    }
+
+    document.getElementById('app').innerHTML = out;
+  }
+};
+
+document.addEventListener('click', function (e) {
+  var el = e.target.closest('[data-h]');
+  if (!el || el.disabled) return;
+  var fn = App.handlers[+el.getAttribute('data-h')];
+  if (fn) fn();
+});
+App.render();
+</script>
+</body>
+</html>
