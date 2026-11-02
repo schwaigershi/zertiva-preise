@@ -258,8 +258,9 @@ var App = {
       out += '<section class="finder" aria-label="Angebotsfinder">';
       if (!s.done) {
         var vis = this.visible(s.ans), step = Math.min(s.step, vis.length - 1), q = vis[step];
-        out += '<div><div class="meta"><span>Frage ' + (step + 1) + ' von ' + vis.length + '</span><span>ca. 30 Sekunden</span></div>' +
-          '<div class="bar"><div style="width:' + Math.round(step / vis.length * 100) + '%"></div></div></div>' +
+        var total = s.ans.projects ? vis.length : 5;
+        out += '<div><div class="meta"><span>Frage ' + (step + 1) + ' von ' + total + '</span><span>ca. 30 Sekunden</span></div>' +
+          '<div class="bar"><div style="width:' + Math.round(step / total * 100) + '%"></div></div></div>' +
           '<div class="q"><h2>' + esc(q.title) + '</h2>' + (q.hint ? '<p>' + esc(q.hint) + '</p>' : '') + '</div>' +
           '<div class="opts">' + q.opts.map(function (o) {
             var on = s.ans[q.id] === o.v;
