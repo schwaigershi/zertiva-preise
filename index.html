@@ -126,7 +126,7 @@ var QUESTIONS = [
 var PROJ = {
   B: { name: 'Projekt Basic', price: 990, products: 70, credits: 10, users: 1, usersLabel: '1 Nutzer', lv: false, support: 'E-Mail-Support', size: 'Bis 70 Produkte', example: 'z. B. Einfamilienhaus, Sanierung' },
   P: { name: 'Projekt Pro', price: 1990, products: 150, credits: 20, users: 3, usersLabel: 'Bis 3 Nutzer', lv: true, support: 'E-Mail- und Telefon-Support', size: 'Bis 150 Produkte', example: 'z. B. Mehrfamilienhaus, Kita' },
-  E: { name: 'Projekt Enterprise', price: 3990, products: 500, credits: 40, users: 99, usersLabel: 'Beliebig viele Nutzer', lv: true, support: 'Persönlicher Ansprechpartner', size: '251–500 Produkte', example: 'z. B. Bürogebäude, Schule' }
+  E: { name: 'Projekt Enterprise', price: 3990, products: 500, credits: 40, users: 10, usersLabel: '10 Nutzer', lv: true, support: 'Persönlicher Ansprechpartner', size: '251–500 Produkte', example: 'z. B. Bürogebäude, Schule' }
 };
 var EXT_PRICE = 590;
 
@@ -163,7 +163,7 @@ var App = {
       if (a.role === 'konzern') why.push('Mehrere Standorte und Teams lassen sich zentral in einer Lizenz bündeln.');
       if (a.projects === 'more') why.push('Unbegrenzt viele aktive Projekte statt maximal 10 im Pro-Plan.');
       if (users === 'more') why.push('Beliebig viele Nutzer – Pro ist auf 10 Nutzer begrenzt.');
-      if (a.projects === '1' && a.size === 'X') why.push('Großprojekte mit mehr als 500 Produkten kalkulieren wir individuell, inklusive passendem Credit-Kontingent.');
+      if (a.projects === '1' && a.size === 'X') why.push('Großprojekte mit mehr als 500 Produkten kalkulieren wir individuell, inklusive passendem Kontingent an Produktbewertungen.');
       why.push('Persönlicher Ansprechpartner und individuelle Laufzeit.');
       return { id: a.projects === '1' ? 'proj-X' : 'abo-enterprise', title: 'Enterprise', model: 'Individuelles Angebot', price: 'Auf Anfrage', unit: 'individuelle Laufzeit',
         reasons: why, alt: a.projects === '1' ? 'Bei bis zu 500 Produkten reicht Projekt Enterprise für 3.990 € einmalig.' : 'Bis 10 Projekte und 10 Nutzer deckt der Pro-Plan ab (350 € / Monat zzgl. Nutzer).',
@@ -182,14 +182,14 @@ var App = {
       }
       if (key === 'P' && need > 3) {
         key = 'E';
-        r.push('Für 4–10 Personen ist Projekt Enterprise mit beliebig vielen Nutzern die passende Stufe.');
+        r.push('Für 4–10 Personen ist Projekt Enterprise mit 10 Nutzern inklusive die passende Stufe.');
       }
       var p = PROJ[key];
       var ext = (a.size === 'P+' && key === 'P') ? 2 : 0;
       var price = p.price + ext * EXT_PRICE;
       r.push('Einmalig zahlen – egal, wie lange das Projekt dauert (bis zum Zertifikat, max. 36 Monate).');
       if (ext > 0) r.push('Pro deckt 150 Produkte ab, mit 2 Erweiterungen à 590 € kommen Sie auf 250 Produkte – günstiger als Enterprise.');
-      else r.push('Bis zu ' + p.products + ' Produkte in der Produktliste, ' + p.credits + ' Credits und ' + p.usersLabel.replace('Bis', 'bis').replace('Beliebig', 'beliebig') + ' inklusive.');
+      else r.push('Bis zu ' + p.products + ' Produkte in der Produktliste, ' + p.credits + ' Produktbewertungen und ' + p.usersLabel.replace('Bis', 'bis') + ' inklusive.');
       r.push(p.lv ? 'KI-Import von Leistungsverzeichnissen und ' + p.support + '.' : 'SHI-Produktdatenbank komplett, Handwerker-Support und ' + p.support + '.');
       if (a.role === 'planer') r.push('Als Auditor laden Sie Bauherr oder GU kostenlos ins Projekt ein.');
       var aboRef = p.lv ? 350 : 200;
@@ -201,7 +201,7 @@ var App = {
 
     if (a.projects === '3' && a.lv === 'nein' && users === '1') {
       return { id: 'abo-basic', title: 'Basic', model: 'Abo · monatlich kündbar', price: '200 €', unit: 'pro Monat',
-        reasons: ['Bis zu 3 aktive Projekte – passt genau zu Ihrem Umfang.', 'Ein Nutzer reicht für Sie aus.', 'Sie brauchen keinen KI-Import und zahlen deshalb nicht für Pro.', '2 Credits pro Monat, weitere nachkaufbar.'],
+        reasons: ['Bis zu 3 aktive Projekte – passt genau zu Ihrem Umfang.', 'Ein Nutzer reicht für Sie aus.', 'Sie brauchen keinen KI-Import und zahlen deshalb nicht für Pro.', '2 Produktbewertungen pro Monat, weitere nachkaufbar.'],
         alt: 'Sobald Sie Leistungsverzeichnisse importieren oder im Team arbeiten möchten, ist Pro für 350 € / Monat die bessere Wahl.',
         cta: '14 Tage kostenlos testen', buy: function () { self.buy('Basic'); }, show: showAbo, showLabel: 'Alle Abo-Pläne ansehen' };
     }
@@ -213,7 +213,7 @@ var App = {
     if (a.projects === '3' && users === '1' && a.lv !== 'nein') reasons.push('KI-Import von Leistungsverzeichnissen ist nur ab Pro enthalten.');
     else reasons.push('KI-Import von Leistungsverzeichnissen inklusive.');
     if (extra > 0) reasons.push('Teamfähig: 1 Nutzer inklusive, weitere je 50 € / Monat (bis zu 10).');
-    reasons.push('5 Credits pro Monat sowie E-Mail- und Telefon-Support.');
+    reasons.push('5 Produktbewertungen pro Monat sowie E-Mail- und Telefon-Support.');
     var price = 350 + 50 * extra;
     return { id: 'abo-pro', title: 'Pro', model: 'Abo · monatlich kündbar', price: eur(price), unit: extra > 0 ? 'pro Monat bei bis zu ' + (extra + 1) + ' Nutzern' : 'pro Monat',
       reasons: reasons,
@@ -285,13 +285,13 @@ var App = {
     if (s.view === 'abo') {
       var abo = [
         Object.assign({ name: 'Basic', who: 'Für Energieberater und kleinere Betriebe', price: '200 €', unit: 'pro Monat', cta: 'Kostenlos testen',
-          features: ['3 aktive Projekte', '1 Nutzer', '2 Credits pro Monat', 'SHI-Produktdatenbank komplett', 'Handwerker-Support', 'E-Mail-Support'],
+          features: ['3 aktive Projekte', '1 Nutzer', '2 Produktbewertungen pro Monat', 'SHI-Produktdatenbank komplett', 'Handwerker-Support', 'E-Mail-Support'],
           buy: function () { self.buy('Basic'); } }, this.card('abo-basic', false, recId)),
         Object.assign({ name: 'Pro', who: 'Für Planer, Auditoren und Bauunternehmen', price: '350 €', unit: 'pro Monat', cta: 'Kostenlos testen',
-          features: ['10 aktive Projekte', '1 Nutzer inkl., weitere je 50 € / Monat (max. 10)', '5 Credits pro Monat', 'SHI-Produktdatenbank komplett', 'KI-Import von Leistungsverzeichnissen', 'E-Mail- und Telefon-Support'],
+          features: ['10 aktive Projekte', '1 Nutzer inkl., weitere je 50 € / Monat (max. 10)', '5 Produktbewertungen pro Monat', 'SHI-Produktdatenbank komplett', 'KI-Import von Leistungsverzeichnissen', 'E-Mail- und Telefon-Support'],
           buy: function () { self.buy('Pro'); } }, this.card('abo-pro', true, recId)),
         Object.assign({ name: 'Enterprise', who: 'Für Unternehmen mit größerem Lizenzbedarf', price: 'Individuell', unit: 'individuelle Laufzeit', cta: 'Jetzt kontaktieren',
-          features: ['Unbegrenzt aktive Projekte', 'Beliebig viele Nutzer', 'Credits nach Bedarf', 'KI-Import von Leistungsverzeichnissen', 'Persönlicher Ansprechpartner', 'Individuelle Laufzeit'],
+          features: ['Unbegrenzt aktive Projekte', 'Beliebig viele Nutzer', 'Produktbewertungen nach Bedarf', 'KI-Import von Leistungsverzeichnissen', 'Persönlicher Ansprechpartner', 'Individuelle Laufzeit'],
           buy: function () { self.buy('Enterprise (Kontaktanfrage)'); } }, this.card('abo-enterprise', false, recId))
       ];
       out += '<section aria-label="Abo-Pläne" style="display:flex;flex-direction:column;gap:20px"><p class="note">Monatlich kündbar · bei jährlicher Zahlung bis zu 16 % sparen</p>' +
@@ -301,17 +301,17 @@ var App = {
     if (s.view === 'projekt') {
       var proj = ['B', 'P', 'E'].map(function (k) {
         var p = PROJ[k];
-        var f = [p.credits + ' Credits inklusive', p.usersLabel, 'SHI-Produktdatenbank komplett', p.lv ? 'KI-Import von Leistungsverzeichnissen' : 'Ohne KI-Import', p.support];
+        var f = [p.credits + ' Produktbewertungen inklusive', p.usersLabel, 'SHI-Produktdatenbank komplett', p.lv ? 'KI-Import von Leistungsverzeichnissen' : 'Ohne KI-Import', p.support];
         return Object.assign({ name: p.name.replace('Projekt ', ''), size: p.size, example: p.example, price: eur(p.price), unit: 'einmalig pro Projekt', cta: 'Projekt starten',
           features: f, buy: function () { self.buy(p.name); } }, self.card('proj-' + k, k === 'P', recId));
       });
       proj.push(Object.assign({ name: 'Individuell', size: 'Mehr als 500 Produkte', example: 'Großprojekte, Quartiere', price: 'Auf Anfrage', unit: 'einmalig pro Projekt', cta: 'Angebot anfragen',
-        features: ['Credits nach Bedarf', 'Beliebig viele Nutzer', 'Persönlicher Ansprechpartner'], buy: function () { self.buy('Projekt individuell (Anfrage)'); } }, this.card('proj-X', false, recId)));
+        features: ['Produktbewertungen nach Bedarf', 'Beliebig viele Nutzer', 'Persönlicher Ansprechpartner'], buy: function () { self.buy('Projekt individuell (Anfrage)'); } }, this.card('proj-X', false, recId)));
       out += '<section aria-label="Projektlizenzen" style="display:flex;flex-direction:column;gap:20px"><p class="note">Einmal zahlen · gültig bis Projektabschluss · Preis nach Anzahl der Produkte in der Produktliste</p>' +
         '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' + proj.map(function (p) { return self.planCard(p); }).join('') + '</div>' +
         '<div class="info"><div><h3>Mehr Produkte als geplant?</h3><p>Jede Projektlizenz lässt sich erweitern: +50 Produkte für 590 €. Oder Sie wechseln mit Anrechnung des bereits gezahlten Preises in die nächste Stufe.</p></div>' +
         '<div><h3>Laufzeit ohne Aufpreis</h3><p>Gültig bis zur Ausstellung des Zertifikats, maximal 36 Monate. Danach 12 Monate Lesezugang für Nachweise.</p></div>' +
-        '<div><h3>Später ins Abo wechseln</h3><p>Abo innerhalb von 3 Monaten abschließen und 50 % des Projektpreises angerechnet bekommen. Credits und Nutzer jederzeit nachkaufbar.</p></div></div></section>';
+        '<div><h3>Später ins Abo wechseln</h3><p>Abo innerhalb von 3 Monaten abschließen und 50 % des Projektpreises angerechnet bekommen. Produktbewertungen und Nutzer jederzeit nachkaufbar.</p></div></div></section>';
     }
 
     document.getElementById('app').innerHTML = out;
