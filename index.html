@@ -67,6 +67,10 @@ ul.chk svg{flex-shrink:0;margin-top:3px}
 .trial h2{font-size:22px}.trial p{margin:4px 0 0;color:#C9D6CE}
 .trial a{min-height:48px;display:inline-flex;align-items:center;padding:12px 24px;border-radius:10px;background:#fff;color:#14211B;font-weight:700;text-decoration:none}
 .note{text-align:center;color:#4A5A52;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:8px 14px;border:1px solid #D6E0DA;border-radius:999px;background:#F5F7F5;color:#14211B;font-size:14px;text-align:left}
+.chip:hover{border-color:#1F6F4A}
+.chip b{color:#4A5A52;font-weight:600}
 </style>
 </head>
 <body>
@@ -269,6 +273,13 @@ var App = {
           '<div class="row"><button type="button" class="link"' + (step === 0 ? ' disabled' : '') + ' data-h="' + this.h(function () { self.setState({ step: Math.max(0, step - 1) }); }) + '">← Zurück</button>' +
           '<button type="button" class="link u" data-h="' + this.h(function () { self.setState({ view: 'abo' }); }) + '">Direkt alle Preise ansehen</button></div>';
       } else {
+        var visA = this.visible(s.ans);
+        var SHORT = { role: 'Rolle', projects: 'Projekte', size: 'Produkte', lv: 'LV-Import', users: 'Nutzer' };
+        out += '<div class="row" style="justify-content:flex-start"><button type="button" class="link" style="padding-left:0" data-h="' + this.h(function () { self.setState({ done: false, step: visA.length - 1 }); }) + '">← Zurück zu den Fragen</button></div>' +
+          '<div><h3 style="margin:0 0 10px;font-size:16px">Ihre Angaben <span class="muted" style="font-weight:400;font-size:14px">– zum Ändern anklicken</span></h3><div class="chips">' + visA.map(function (q, i) {
+            var o = q.opts.find(function (x) { return x.v === s.ans[q.id]; });
+            return '<button type="button" class="chip" data-h="' + self.h(function () { self.setState({ done: false, step: i }); }) + '"><b>' + SHORT[q.id] + ':</b> ' + esc(o ? o.l : '–') + '</button>';
+          }).join('') + '</div></div>';
         out += '<div><span class="eyebrow">Unsere Empfehlung für Sie</span>' +
           '<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin:8px 0"><h2 style="font-size:34px;font-weight:800">' + esc(rec.title) + '</h2><span class="pill">' + esc(rec.model) + '</span></div>' +
           '<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px"><span class="big">' + esc(rec.price) + '</span><span class="muted">' + esc(rec.unit) + '</span></div></div>' +
